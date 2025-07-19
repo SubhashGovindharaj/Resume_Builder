@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Resume Builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+<!-- Navbar -->
+<nav class="bg-white border-gray-200 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+    <a href="#" class="flex items-center space-x-3">
+      <img src="static/images/guvi_banner.jpg" alt="Guvi Logo" class="h-12 w-auto object-contain">
+      <span class="self-center text-2xl font-bold whitespace-nowrap text-gray-900"></span>
+    </a>
+
+    <div class="flex items-center space-x-3">
+      <a href="#" class="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2">Login</a>
+      <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-white">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+      Build Your Perfect Resume with AI
+    </h1>
+    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48">
+      Create a professional resume in minutes with our AI-powered builder. Fill in your details and let our smart technology craft the perfect resume for you.
+    </p>
+  </div>
+</section>
+
+<!-- Progress Bar -->
+<div class="max-w-4xl mx-auto px-4 mb-8">
+  <div class="flex items-center">
+    <div class="flex items-center text-blue-600">
+      <div class="flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full lg:h-10 lg:w-10">
+        <i class="fas fa-user text-blue-600"></i>
+      </div>
+      <span class="ml-3 text-sm font-medium">Personal Info</span>
+    </div>
+    <div class="flex-1 h-1 bg-blue-100 mx-4">
+      <div class="h-1 bg-blue-600 w-1/4"></div>
+    </div>
+    <div class="flex items-center text-gray-500">
+      <div class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full lg:h-10 lg:w-10">
+        <i class="fas fa-briefcase text-gray-500"></i>
+      </div>
+      <span class="ml-3 text-sm font-medium">Experience</span>
+    </div>
+    <div class="flex-1 h-1 bg-gray-100 mx-4"></div>
+    <div class="flex items-center text-gray-500">
+      <div class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full lg:h-10 lg:w-10">
+        <i class="fas fa-graduation-cap text-gray-500"></i>
+      </div>
+      <span class="ml-3 text-sm font-medium">Education</span>
+    </div>
+    <div class="flex-1 h-1 bg-gray-100 mx-4"></div>
+    <div class="flex items-center text-gray-500">
+      <div class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full lg:h-10 lg:w-10">
+        <i class="fas fa-check text-gray-500"></i>
+      </div>
+      <span class="ml-3 text-sm font-medium">Review</span>
+    </div>
+  </div>
+</div>
+
+<!-- Resume Form -->
+<section class="py-8 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Personal Information</h2>
+        <p class="text-gray-600">Let's start with your basic information</p>
+      </div>
+
+      <form>
+        
+        <!-- Profile Photo Upload -->
+        <div class="mb-8">
+          <label class="block mb-2 text-sm font-medium text-gray-900">Profile Photo (Optional)</label>
+          <div class="flex items-center justify-center w-full">
+            <label for="profile_photo" class="flex flex-col items-center justify-center w-32 h-32 border-2 border-gray-300 border-dashed rounded-full cursor-pointer bg-gray-50 hover:bg-gray-100">
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <i class="fas fa-camera text-gray-400 text-2xl mb-2"></i>
+                <p class="text-xs text-gray-500">Upload Photo</p>
+              </div>
+              <input id="profile_photo" name="profile_photo" type="file" accept="image/*" class="hidden" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Basic Information -->
+        <div class="grid gap-6 mb-8 md:grid-cols-2">
+          <div>
+            <label for="full_name" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fas fa-user mr-2 text-blue-600"></i>Full Name *
+            </label>
+            <input type="text" id="full_name" name="full_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="John Doe" required>
+          </div>
+          <div>
+            <label for="job_title" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fas fa-briefcase mr-2 text-blue-600"></i>Job Title *
+            </label>
+            <input type="text" id="job_title" name="job_title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Data Scientist" required>
+          </div>
+          <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fas fa-envelope mr-2 text-blue-600"></i>Email Address *
+            </label>
+            <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="john@email.com" required>
+          </div>
+          <div>
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fas fa-phone mr-2 text-blue-600"></i>Phone Number *
+            </label>
+            <input type="tel" id="phone" name="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="+91-9876543210" required>
+          </div>
+          <div>
+            <label for="linkedin" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fab fa-linkedin mr-2 text-blue-600"></i>LinkedIn Profile
+            </label>
+            <input type="url" id="linkedin" name="linkedin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="https://linkedin.com/in/johndoe">
+          </div>
+          <div>
+            <label for="github" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fab fa-github mr-2 text-blue-600"></i>GitHub Profile
+            </label>
+            <input type="url" id="github" name="github" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="https://github.com/johndoe">
+          </div>
+          <div>
+            <label for="portfolio" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fas fa-globe mr-2 text-blue-600"></i>Portfolio Website
+            </label>
+            <input type="url" id="portfolio" name="portfolio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="https://johndoe.com">
+          </div>
+          <div>
+            <label for="location" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>Location *
+            </label>
+            <input type="text" id="location" name="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Coimbatore, India" required>
+          </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Professional Summary</h3>
+          <div>
+            <label for="summary" class="block mb-2 text-sm font-medium text-gray-900">
+              <i class="fas fa-user-tie mr-2 text-blue-600"></i>Professional Summary *
+            </label>
+            <textarea id="summary" name="summary" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Write a brief summary of your professional background and key achievements..." required></textarea>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Skills</h3>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label for="technical_skills" class="block mb-2 text-sm font-medium text-gray-900">
+                <i class="fas fa-code mr-2 text-blue-600"></i>Technical Skills
+              </label>
+              <input type="text" id="technical_skills" name="technical_skills" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Python, Machine Learning, SQL, TensorFlow">
+            </div>
+            <div>
+              <label for="soft_skills" class="block mb-2 text-sm font-medium text-gray-900">
+                <i class="fas fa-users mr-2 text-blue-600"></i>Soft Skills
+              </label>
+              <input type="text" id="soft_skills" name="soft_skills" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Leadership, Communication, Problem Solving">
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Work Experience</h3>
+          
+          <!-- Experience 1 -->
+          <div class="bg-gray-50 rounded-lg p-6 mb-4">
+            <h4 class="text-md font-medium text-gray-900 mb-4">Experience #1</h4>
+            <div class="grid gap-4 md:grid-cols-2 mb-4">
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Job Title</label>
+                <input type="text" name="experience_title_1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Senior Data Scientist">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Company</label>
+                <input type="text" name="experience_company_1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Tech Solutions Inc.">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Start Date</label>
+                <input type="month" name="experience_start_1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">End Date</label>
+                <input type="month" name="experience_end_1" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 text-sm font-medium text-gray-900">Job Description</label>
+              <textarea name="experience_description_1" rows="3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Describe your responsibilities and achievements..."></textarea>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="bg-gray-50 rounded-lg p-6 mb-4">
+            <h4 class="text-md font-medium text-gray-900 mb-4">Experience #2 (Optional)</h4>
+            <div class="grid gap-4 md:grid-cols-2 mb-4">
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Job Title</label>
+                <input type="text" name="experience_title_2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Data Analyst">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Company</label>
+                <input type="text" name="experience_company_2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Previous Company">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Start Date</label>
+                <input type="month" name="experience_start_2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">End Date</label>
+                <input type="month" name="experience_end_2" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 text-sm font-medium text-gray-900">Job Description</label>
+              <textarea name="experience_description_2" rows="3" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Describe your responsibilities and achievements..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Education</h3>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <div class="grid gap-4 md:grid-cols-2 mb-4">
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Degree</label>
+                <input type="text" name="education_degree" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Master of Science in Data Science">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Institution</label>
+                <input type="text" name="education_institution" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="University of Technology">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">Year of Graduation</label>
+                <input type="number" name="education_year" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="2023" min="1950" max="2030">
+              </div>
+              <div>
+                <label class="block mb-2 text-sm font-medium text-gray-900">GPA/Grade</label>
+                <input type="text" name="education_gpa" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="3.8/4.0">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Additional Information</h3>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label for="languages" class="block mb-2 text-sm font-medium text-gray-900">
+                <i class="fas fa-language mr-2 text-blue-600"></i>Languages
+              </label>
+              <input type="text" id="languages" name="languages" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="English (Native), Hindi (Fluent), Tamil (Native)">
+            </div>
+            <div>
+              <label for="certifications" class="block mb-2 text-sm font-medium text-gray-900">
+                <i class="fas fa-certificate mr-2 text-blue-600"></i>Certifications
+              </label>
+              <input type="text" id="certifications" name="certifications" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="AWS Certified, Google Cloud Professional">
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-between">
+          <button type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">
+            <i class="fas fa-save mr-2"></i>Save as Draft
+          </button>
+          <div class="flex gap-3">
+            <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5">
+              <i class="fas fa-eye mr-2"></i>Preview Resume
+            </button>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+              <i class="fas fa-magic mr-2"></i>Generate Resume
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-200">
+  <div class="mx-auto max-w-screen-xl px-4 py-8">
+    <div class="text-center">
+      <p class="text-sm text-gray-500">
+        © 2024 AI Resume Builder. Built with <span class="text-red-500">❤️</span> for job seekers.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

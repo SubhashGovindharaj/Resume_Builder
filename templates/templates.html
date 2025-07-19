@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Your Resume Template</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.2.1/dist/flowbite.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+
+<!-- Navbar -->
+<nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-sm">
+  <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
+    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="{{ url_for('static', filename='images/guvi_banner.jpg') }}" class="h-8" alt="GUVI Logo" />
+      <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white text-gray-900">AI Resume Builder</span>
+    </a>
+    
+    <div class="flex items-center md:order-2 space-x-3 md:space-x-2 rtl:space-x-reverse">
+      <button onclick="window.history.back()" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+        <i class="fas fa-arrow-left mr-2"></i>Back to Form
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Header Section -->
+<section class="bg-white dark:bg-gray-900 py-8">
+  <div class="max-w-screen-xl mx-auto px-4 text-center">
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl dark:text-white">
+      Choose Your Perfect Template
+    </h1>
+    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+      Select from our professionally designed resume templates. Each template is ATS-friendly and optimized for modern hiring practices.
+    </p>
+  </div>
+</section>
+
+<!-- Templates Grid -->
+<section class="py-8 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-screen-xl mx-auto px-4">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Template 1: Modern Professional -->
+      <div class="template-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <div class="template-preview h-64 bg-gradient-to-br from-blue-50 to-white dark:from-gray-700 dark:to-gray-800 p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                <i class="fas fa-user text-white"></i>
+              </div>
+              <div class="ml-3">
+                <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-24 mb-1"></div>
+                <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-20"></div>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="h-2 bg-blue-200 dark:bg-blue-900 rounded w-full"></div>
+              <div class="h-2 bg-blue-200 dark:bg-blue-900 rounded w-4/5"></div>
+              <div class="h-2 bg-blue-200 dark:bg-blue-900 rounded w-3/5"></div>
+            </div>
+            <div class="mt-4">
+              <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-20 mb-2"></div>
+              <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-full mb-1"></div>
+              <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
+            </div>
+          </div>
+          <div class="absolute top-2 right-2">
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Popular</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Modern Professional</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Clean, modern design perfect for tech and business professionals. Features a professional header with contact info and skills highlights.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">ATS Friendly</span>
+            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Tech Focus</span>
+          </div>
+          <button onclick="selectTemplate('modern')" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            <i class="fas fa-check mr-2"></i>Select Template
+          </button>
+        </div>
+      </div>
+
+      <!-- Template 2: Creative Designer -->
+      <div class="template-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <div class="template-preview h-64 bg-gradient-to-br from-purple-50 to-white dark:from-gray-700 dark:to-gray-800 p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
+                <i class="fas fa-palette text-white"></i>
+              </div>
+              <div class="ml-3">
+                <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-24 mb-1"></div>
+                <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-20"></div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <div class="h-2 bg-purple-200 dark:bg-purple-900 rounded w-full"></div>
+                <div class="h-2 bg-purple-200 dark:bg-purple-900 rounded w-3/4"></div>
+              </div>
+              <div class="space-y-2">
+                <div class="h-2 bg-purple-200 dark:bg-purple-900 rounded w-full"></div>
+                <div class="h-2 bg-purple-200 dark:bg-purple-900 rounded w-4/5"></div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute top-2 right-2">
+            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Creative</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Creative Designer</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Eye-catching design for creative professionals. Perfect for designers, artists, and marketing professionals who want to stand out.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-orange-900 dark:text-orange-300">Creative</span>
+            <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">Visual</span>
+          </div>
+          <button onclick="selectTemplate('creative')" class="w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+            <i class="fas fa-check mr-2"></i>Select Template
+          </button>
+        </div>
+      </div>
+
+      <!-- Template 3: Executive -->
+      <div class="template-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <div class="template-preview h-64 bg-gradient-to-br from-gray-50 to-white dark:from-gray-700 dark:to-gray-800 p-6">
+            <div class="text-center mb-4">
+              <div class="w-16 h-16 bg-gray-500 rounded-full mx-auto mb-2 flex items-center justify-center">
+                <i class="fas fa-user-tie text-white"></i>
+              </div>
+              <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-32 mx-auto mb-1"></div>
+              <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-24 mx-auto"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+              <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
+              <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-4/5"></div>
+            </div>
+          </div>
+          <div class="absolute top-2 right-2">
+            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Executive</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Executive Classic</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Traditional and elegant design for senior professionals. Perfect for executives, managers, and experienced professionals.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">Professional</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Leadership</span>
+          </div>
+          <button onclick="selectTemplate('executive')" class="w-full text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+            <i class="fas fa-check mr-2"></i>Select Template
+          </button>
+        </div>
+      </div>
+
+      <!-- Template 4: Minimalist -->
+      <div class="template-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <div class="template-preview h-64 bg-gradient-to-br from-green-50 to-white dark:from-gray-700 dark:to-gray-800 p-6">
+            <div class="border-l-4 border-green-500 pl-4 mb-4">
+              <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-24 mb-1"></div>
+              <div class="h-3 bg-gray-200 dark:bg-gray-700 rounded w-20"></div>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <div class="h-2 bg-green-200 dark:bg-green-900 rounded w-16 mb-1"></div>
+                <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+                <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-4/5"></div>
+              </div>
+              <div>
+                <div class="h-2 bg-green-200 dark:bg-green-900 rounded w-20 mb-1"></div>
+                <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+                <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-3/5"></div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute top-2 right-2">
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Clean</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Minimalist Clean</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Simple, clean design that focuses on content. Perfect for any industry where clarity and readability are key.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">ATS Friendly</span>
+            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-teal-900 dark:text-teal-300">Simple</span>
+          </div>
+          <button onclick="selectTemplate('minimalist')" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800">
+            <i class="fas fa-check mr-2"></i>Select Template
+          </button>
+        </div>
+      </div>
+
+      <!-- Template 5: Two Column -->
+      <div class="template-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <div class="template-preview h-64 bg-gradient-to-br from-indigo-50 to-white dark:from-gray-700 dark:to-gray-800 p-6">
+            <div class="grid grid-cols-3 gap-4 h-full">
+              <div class="bg-indigo-100 dark:bg-indigo-900 rounded p-2">
+                <div class="w-8 h-8 bg-indigo-500 rounded-full mx-auto mb-2"></div>
+                <div class="space-y-1">
+                  <div class="h-1 bg-indigo-300 dark:bg-indigo-700 rounded w-full"></div>
+                  <div class="h-1 bg-indigo-300 dark:bg-indigo-700 rounded w-3/4"></div>
+                  <div class="h-1 bg-indigo-300 dark:bg-indigo-700 rounded w-2/3"></div>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-2/3 mb-2"></div>
+                <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mb-3"></div>
+                <div class="space-y-1">
+                  <div class="h-1 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+                  <div class="h-1 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
+                  <div class="h-1 bg-gray-200 dark:bg-gray-700 rounded w-4/5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute top-2 right-2">
+            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Modern</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Two Column Pro</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Efficient two-column layout that maximizes space usage. Great for professionals with diverse skills and experiences.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Space Efficient</span>
+            <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-cyan-900 dark:text-cyan-300">Detailed</span>
+          </div>
+          <button onclick="selectTemplate('twocolumn')" class="w-full text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
+            <i class="fas fa-check mr-2"></i>Select Template
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Loading Modal -->
+<div id="loadingModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md mx-4">
+    <div class="text-center">
+      <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Generating Your Resume</h3>
+      <p class="text-gray-600 dark:text-gray-400">Please wait while we create your professional resume...</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-600">
+  <div class="mx-auto max-w-screen-xl px-4 py-8">
+    <div class="text-center">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        © 2024 AI Resume Builder. Built with <span class="text-red-500">❤️</span> for job seekers.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function selectTemplate(templateType) {
+  // Get form data from localStorage (if you're storing it there)
+  const formData = JSON.parse(localStorage.getItem('resumeFormData') || '{}');
+  
+  // Show loading modal
+  document.getElementById('loadingModal').classList.remove('hidden');
+  
+  // Simulate processing time and then redirect to the actual resume
+  setTimeout(() => {
+    // You can pass the template type as a parameter
+    window.location.href = `resume-preview.html?template=${templateType}`;
+    
+    // Alternative: You could submit to your backend
+    // fetch('/generate-resume', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     template: templateType,
+    //     formData: formData
+    //   })
+    // });
+  }, 2000);
+}
+
+// Add hover effects
+document.querySelectorAll('.template-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.classList.add('transform', 'scale-105');
+  });
+  
+  card.addEventListener('mouseleave', function() {
+    this.classList.remove('transform', 'scale-105');
+  });
+});
+</script>
+
+</body>
+</html>
