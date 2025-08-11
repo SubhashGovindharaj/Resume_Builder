@@ -1,7 +1,10 @@
 Flask==2.3.2
 gunicorn==21.2.0
 python-magic
+python-magic-bin
 PyPDF2
 python-docx
 google-generativeai
 python-dotenv
+flask
+werkzeug
