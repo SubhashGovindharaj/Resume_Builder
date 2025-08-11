@@ -202,11 +202,13 @@
     <div class="template-grid grid gap-8 mb-12" id="templatesGrid">
       
       <!-- Template 1 - Modern Professional -->
-      <div class="template-card bg-white rounded-2xl overflow-hidden shadow-lg animate__animated animate__fadeInUp" data-template="modern-professional" onclick="selectTemplate(this, 'Modern Professional')">
+      <div class="template-card bg-white rounded-2xl overflow-hidden shadow-lg animate__animated animate__fadeInUp"
+          data-template-file="resumes/resume1.html"
+          onclick="selectTemplate(this)">
         <div class="aspect-[3/4] relative">
-          <img src="{{ url_for('static', filename='images/template1.png') }}" 
-               alt="Modern Professional Resume Template" 
-               class="w-full h-full object-cover">
+          <img src="{{ url_for('static', filename='images/template1.jpg') }}" 
+              alt="Modern Professional Resume Template" 
+              class="w-full h-full object-cover">
         </div>
       </div>
 
@@ -327,21 +329,22 @@
 
     // Initialize page
     document.addEventListener('DOMContentLoaded', function() {
-      uploadedFile = getUrlParameter('file');
-      if (uploadedFile) {
+    // Get file from URL parameter
+    let uploadedFile = getUrlParameter('file');
+    if (uploadedFile) {
         console.log('Processing file:', uploadedFile);
-      }
-      
-      // Store user session data for backend integration
-      const sessionData = {
-        uploadedFile: uploadedFile,
-        timestamp: new Date().toISOString(),
-        sessionId: generateSessionId()
-      };
-      
-      // Store in sessionStorage for backend integration
-      sessionStorage.setItem('resumeSession', JSON.stringify(sessionData));
-    });
+    }
+    
+    // Retrieve existing session data or initialize a new object
+    let existingSession = JSON.parse(sessionStorage.getItem('resumeSession')) || {};
+
+    // Update session data
+    existingSession.uploadedFile = uploadedFile;
+    existingSession.timestamp = new Date().toISOString();  // update timestamp if needed
+
+    // Store updated session data back to sessionStorage
+    sessionStorage.setItem('resumeSession', JSON.stringify(existingSession));
+});
 
     // Generate session ID
     function generateSessionId() {
@@ -360,7 +363,7 @@
       
       // Store selected template
       selectedTemplate = {
-        id: cardElement.dataset.template,
+        file: cardElement.dataset.templateFile,
         name: templateName,
         element: cardElement
       };
@@ -383,59 +386,48 @@
     }
 
     // Enhance resume with AI
-    function enhanceResume() {
-      if (!selectedTemplate) {
-        alert('Please select a template first.');
-        return;
-      }
-      
-      // Show loading overlay
-      const overlay = document.getElementById('loadingOverlay');
-      overlay.classList.add('active');
-      
-      // Simulate AI processing with progress bar
-      let progress = 0;
-      const progressBar = document.getElementById('progressBar');
-      
-      const interval = setInterval(() => {
-        progress += Math.random() * 15;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-          
-          // Store final data for backend
-          const sessionData = JSON.parse(sessionStorage.getItem('resumeSession') || '{}');
-          sessionData.processingComplete = true;
-          sessionData.completedAt = new Date().toISOString();
-          sessionStorage.setItem('resumeSession', JSON.stringify(sessionData));
-          
-          // Redirect to download page after processing
-          setTimeout(() => {
-            window.location.href = `./download.html?session=${sessionData.sessionId}`;
-          }, 1000);
-        }
-        progressBar.style.width = progress + '%';
-      }, 200);
+  async function enhanceResume() {
+  if (!selectedTemplate) {
+    alert('Please select a template first.');
+    return;
+  }
+
+  // Show loading spinner/overlay
+  document.getElementById('loadingOverlay').classList.add('active');
+
+  const sessionData = JSON.parse(sessionStorage.getItem('resumeSession') || '{}');
+
+  if (!sessionData.resumeData) {
+    alert('No resume data found.');
+    document.getElementById('loadingOverlay').classList.remove('active');
+    return;
+  }
+
+  // Attach selected template and sessionId to resume data
+  sessionData.resumeData.template = selectedTemplate.file;
+  const sessionId = sessionData.sessionId;
+  sessionData.resumeData.sessionId = sessionId;
+
+  try {
+    const response = await fetch('/enhance-resume', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(sessionData.resumeData)
+    });
+
+    if (response.ok) {
+      // ✅ Redirect with sessionId to download.html
+      window.location.href = `/download.html?sessionId=${sessionId}`;
+    } else {
+      alert('Failed to enhance resume.');
     }
-
-    // Add stagger animation to template cards
-    const cards = document.querySelectorAll('.template-card');
-    cards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && selectedTemplate) {
-        // Clear selection
-        document.querySelectorAll('.template-card').forEach(card => {
-          card.classList.remove('selected');
-        });
-        selectedTemplate = null;
-        document.getElementById('selectionArea').classList.remove('hidden');
-        document.getElementById('selectedTemplate').classList.add('hidden');
-      }
-    });
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error enhancing resume.');
+  } finally {
+    document.getElementById('loadingOverlay').classList.remove('active');
+  }
+}
   </script>
 </body>
 </html>

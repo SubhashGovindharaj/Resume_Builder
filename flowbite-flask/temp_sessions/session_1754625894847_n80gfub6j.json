@@ -1,0 +1,99 @@
+{
+  "personalInfo": {
+    "fullName": "GOMATHI A",
+    "jobTitle": "Data Science",
+    "email": "gomathi18arunachalam@gmail.com",
+    "phone": "+91 9578990162",
+    "location": "Chennai, Tamil Nadu",
+    "summary": "Passionate Data Scientist, dedicated to leveraging analytical and Machine Learning expertise to address practical challenges."
+  },
+  "experience": [
+    {
+      "jobTitle": "Teacher",
+      "company": "St.Francis Xavier Higher Secondary School",
+      "startDate": "2018",
+      "endDate": "2020",
+      "isCurrent": false,
+      "description": ""
+    }
+  ],
+  "education": [
+    {
+      "degree": "BTech",
+      "field": "IT",
+      "institution": "Nandha Engineering College",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "HSC",
+      "field": "",
+      "institution": "Saru Metriculation",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "SSLC",
+      "field": "",
+      "institution": "St.Francis Xavier\u2019s Higher Secondary School",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "Python, SQL, Pandas, NumPy, Matplotlib, Plotly, Power BI, MySQL, MongoDB, Scikit-learn, Jupiter Notebook, Google Colab",
+    "soft": ""
+  },
+  "projects": [
+    {
+      "name": "Heart Disease Prediction",
+      "technologies": "",
+      "description": "Predicting heart disease to identify individuals who are at risk of developing cardiovascular problems in the future.",
+      "url": ""
+    },
+    {
+      "name": "Diabetes Risk Prediction",
+      "technologies": "",
+      "description": "Developed a machine learning model to predict diabetes risk using clinical and lifestyle data.",
+      "url": ""
+    },
+    {
+      "name": "Android-Malware-Prediction",
+      "technologies": "",
+      "description": "Employed machine learning techniques to develop a model for the early detection of Android malware.",
+      "url": ""
+    },
+    {
+      "name": "Customer Conversion Prediction",
+      "technologies": "",
+      "description": "Developed a machine learning project aimed at forecasting customer conversion rates in marketing campaigns.",
+      "url": ""
+    },
+    {
+      "name": "HR Employee distribution analysis",
+      "technologies": "",
+      "description": "Designed and implemented an HR employee distribution project using SQL and Power BI tools.",
+      "url": ""
+    },
+    {
+      "name": "YouTube data harvesting and warehousing",
+      "technologies": "",
+      "description": "Extract YouTube channel data using the channel ID and store it in MongoDB.",
+      "url": ""
+    },
+    {
+      "name": "IMDB movie review sentiment analysis",
+      "technologies": "",
+      "description": "Creating an NLP-based project aimed at developing an IMDb movie review sentiment analysis model.",
+      "url": ""
+    },
+    {
+      "name": "Extracting Business Card Data",
+      "technologies": "",
+      "description": "Leverage Python's easyOCR along with pandas, numpy, and SQL queries to extract and store crucial data from business cards into a MySQL Database.",
+      "url": ""
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754625894847_n80gfub6j"
+}

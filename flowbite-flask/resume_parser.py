@@ -1,5 +1,7 @@
 import pdfplumber
 import os
+import re
+import json
 from dotenv import load_dotenv
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_groq import ChatGroq
@@ -16,7 +18,7 @@ llm = ChatGroq(
     model_name="llama-3.3-70b-versatile"
 )
 
-# Function to extract text from PDF using pdfplumber
+# Extract text from PDF
 def extract_resume_text(pdf_path):
     text = ""
     with pdfplumber.open(pdf_path) as pdf:
@@ -26,35 +28,39 @@ def extract_resume_text(pdf_path):
                 text += page_text + "\n"
     return text
 
-
-# Function to parse resume using LangChain + Groq
+# LangChain prompt logic
 def parse_resume_text_with_langchain(text):
     prompt = f"""
 From the following resume text, extract:
 - Full Name
+- Job Title
 - Phone Number
 - Email Address
+- Location 
 - LinkedIn Profile URL
 - GitHub Profile URL
-- Skills
-- Work Experience (job title, company, duration, description)
+- Technical Skills
+- Soft Skills
+- Work Experience (job title, company, start_date,end_date, description)- use the same field names as in the example
 - Achievements
 - Summary or professional summary
-- Education
+- Education (field_of_study, degree, institution, year,percentage_or_cgpa - use the same field names as in the example)
 - Certifications
-- Projects (title, description, tools, duration)
+- Projects (title, description, tools, duration, github_url - use the same field names as in the example)
 
 Omit missing fields.
 
 Format the result in clean JSON like:
 {{
   "name": "",
+  "job_title": "",
   "phone": "",
   "email": "",
   "location": "",
   "linkedin": "",
   "github": "",
-  "skills": [],
+  "technical_skills": [],
+  "soft_skills": [],
   "experience": [],
   "achievements": [],
   "summary": "",
@@ -65,7 +71,6 @@ Format the result in clean JSON like:
 
 Resume Text:
 {text}
-
 
 *Deliverables*:
 - Return the parsed resume fields in JSON format as specified above.
@@ -80,14 +85,48 @@ Resume Text:
     response = llm.invoke(messages)
     return response.content
 
-# Main function to handle resume parsing
-def main(pdf_path):     
-       
-    # Extract text from the PDF resume
-    resume_text = extract_resume_text(pdf_path)
-    
-    parsed_resume = parse_resume_text_with_langchain(resume_text)
-    
-    return parsed_resume
 
-print(main("data/ARUNRAJ_Business Analyst.pdf"))
+# Optional cleaning function (removes empty strings, trims whitespace)
+def clean_parsed_data(data):
+    if isinstance(data, dict):
+        return {k: clean_parsed_data(v) for k, v in data.items() if v not in ["", None, [], {}]}
+    elif isinstance(data, list):
+        return [clean_parsed_data(i) for i in data if i not in ["", None, [], {}]]
+    elif isinstance(data, str):
+        return data.strip()
+    return data
+
+
+# Main function
+def main(pdf_path):
+    # Step 1: Extract raw text from PDF
+    resume_text = extract_resume_text(pdf_path)
+
+    # Step 2: Get raw response from LLM
+    llm_response = parse_resume_text_with_langchain(resume_text)
+    
+    if not llm_response:
+        print("Empty response from LLM.")
+        return {}
+
+    # Step 3: Remove CropBox logs (pdfplumber logs show up in stdout, not in response — safe to skip)
+
+    # Step 4: Remove triple quotes or code blocks
+    cleaned = llm_response.strip()
+
+    # Remove surrounding triple quotes (""") or triple backticks (```)
+    cleaned = re.sub(r'^[`"]{3}', '', cleaned)
+    cleaned = re.sub(r'[`"]{3}$', '', cleaned)
+
+    # Step 5: Try parsing JSON
+    try:
+        parsed_data = json.loads(cleaned)
+        return clean_parsed_data(parsed_data)
+    except json.JSONDecodeError as e:
+        print(f"Error parsing cleaned response: {e}")
+        return {}
+    
+
+if __name__ == "__main__":
+    result = main("flowbite-flask/data/Nilofer_Data_scientist.pdf")
+    print(result)

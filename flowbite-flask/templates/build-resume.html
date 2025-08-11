@@ -191,28 +191,75 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-              <input type="text" id="fullName" class="form-input w-full px-3 py-2 rounded-md" placeholder="John Doe" oninput="updatePreview()">
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="form-input w-full px-3 py-2 rounded-md"
+                placeholder="John Doe"
+                value="{{ data.get('name', '') if data else '' }}"
+                oninput="updatePreview()"
+              />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Job Title *</label>
-              <input type="text" id="jobTitle" class="form-input w-full px-3 py-2 rounded-md" placeholder="Software Engineer" oninput="updatePreview()">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Job Title *</label>
+            <input
+              type="text"
+              id="jobTitle"
+              name="jobTitle"
+              class="form-input w-full px-3 py-2 rounded-md"
+              placeholder="Software Engineer"
+              value="{{ data.get('job_title', '') if data else '' }}"
+              oninput="updatePreview()"
+            >
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-              <input type="email" id="email" class="form-input w-full px-3 py-2 rounded-md" placeholder="john@example.com" oninput="updatePreview()">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input w-full px-3 py-2 rounded-md"
+                placeholder="john@example.com"
+                value="{{ data.get('email', '') if data else '' }}"
+                oninput="updatePreview()"
+              >
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-              <input type="tel" id="phone" class="form-input w-full px-3 py-2 rounded-md" placeholder="+1 (555) 123-4567" oninput="updatePreview()">
-            </div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input w-full px-3 py-2 rounded-md"
+              placeholder="+1 (555) 123-4567"
+              value="{{ data.get('phone', '') if data else '' }}"
+              oninput="updatePreview()"
+            >
+          </div>
             <div class="md:col-span-2">
               <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
-              <input type="text" id="location" class="form-input w-full px-3 py-2 rounded-md" placeholder="City, State, Country" oninput="updatePreview()">
+              <input
+                type="text"
+                id="location"
+                name="location"
+                class="form-input w-full px-3 py-2 rounded-md"
+                placeholder="City, State, Country"
+                value="{{ data.get('location', '') if data else '' }}"
+                oninput="updatePreview()"
+              >
             </div>
             <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-gray-700 mb-2">Professional Summary</label>
-              <textarea id="summary" class="form-input w-full px-3 py-2 rounded-md resize-none" rows="3" placeholder="Brief description of your professional background and key achievements..." oninput="updatePreview()"></textarea>
-            </div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Professional Summary</label>
+            <textarea
+              id="summary"
+              name="summary"
+              class="form-input w-full px-3 py-2 rounded-md resize-none"
+              rows="3"
+              placeholder="Brief description of your professional background and key achievements..."
+              oninput="updatePreview()"
+            >{{ data.get('summary', '') if data else '' }}</textarea>
+          </div>
           </div>
         </div>
 
@@ -266,11 +313,25 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Technical Skills</label>
-              <textarea id="technicalSkills" class="form-input w-full px-3 py-2 rounded-md resize-none" rows="3" placeholder="JavaScript, Python, React, Node.js..." oninput="updatePreview()"></textarea>
+              <textarea
+                id="technicalSkills"
+                name="technicalSkills"
+                class="form-input w-full px-3 py-2 rounded-md resize-none"
+                rows="3"
+                placeholder="Python, SQL, Machine Learning..."
+                oninput="updatePreview()"
+              >{{ ', '.join(data.get("technical_skills", [])) if data else '' }}</textarea>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Soft Skills</label>
-              <textarea id="softSkills" class="form-input w-full px-3 py-2 rounded-md resize-none" rows="3" placeholder="Leadership, Communication, Problem Solving..." oninput="updatePreview()"></textarea>
+              <textarea
+                id="softSkills"
+                name="softSkills"
+                class="form-input w-full px-3 py-2 rounded-md resize-none"
+                rows="3"
+                placeholder="Leadership, Communication, Problem Solving..."
+                oninput="updatePreview()"
+              >{{ ', '.join(data.get('soft_skills', [])) if data else '' }}</textarea>
             </div>
           </div>
         </div>
@@ -304,13 +365,18 @@
       </div>
     </div>
   </div>
-
-  <!-- Mobile Preview Button -->
-  <!-- Removed -->
-
-  <!-- Mobile Preview Modal -->
-  <!-- Removed -->
-
+  
+<script>
+  const parsedEducation = {{ data.get('education',[]) | tojson | safe }};
+  const parsedExperience = {{ data.get('experience',[]) | tojson | safe }};
+  const parsedProjects = {{ data.get('projects', []) | tojson | safe }};
+  
+  populateEducation(parsedEducation);
+  populateExperience(parsedExperience);
+  populateProjects(parsedProjects);
+  
+</script>
+  
   <script>
     // Global variables
     let experienceCount = 0;
@@ -320,8 +386,6 @@
 
     // Initialize
     document.addEventListener('DOMContentLoaded', function() {
-      addExperience();
-      addEducation();
       updatePreview();
       updateProgress();
     });
@@ -364,8 +428,8 @@
           <div class="sm:col-span-2">
             <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
             <textarea class="form-input w-full px-3 py-2 rounded-md text-sm resize-none" rows="3" placeholder="• Key achievements and responsibilities
-• Use bullet points for better readability
-• Focus on results and impact" oninput="updatePreview()"></textarea>
+            • Use bullet points for better readability
+            • Focus on results and impact" oninput="updatePreview()"></textarea>
           </div>
         </div>
       `;
@@ -373,7 +437,64 @@
       container.appendChild(entry);
       updatePreview();
     }
+function populateExperience(experienceData) {
+    experienceData.forEach((exp) => {
+      experienceCount++;
+      const container = document.getElementById('experienceContainer');
+      const entry = document.createElement('div');
+      entry.className = 'border border-gray-200 rounded-md p-4 bg-gray-50';
+      entry.id = `experience-${experienceCount}`;
+      
+      // Parse start and end from the duration string
+      let startDate = "";
+      let endDate = "";
+      if (exp.duration && exp.duration.includes("–")) {
+        [startDate, endDate] = exp.duration.split("–").map(s => s.trim());
+      }
 
+      entry.innerHTML = `
+  <div class="flex items-center justify-between mb-3">
+    <h4 class="font-medium text-gray-900">Experience ${experienceCount}</h4>
+    <button onclick="removeEntry('experience-${experienceCount}')" class="btn-danger text-white px-2 py-1 rounded text-xs">
+      Remove
+    </button>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Job Title</label>
+      <input type="text" name="jobTitle" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${exp.job_title || ''}" oninput="updatePreview()">
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+      <input type="text" name="company" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${exp.company || ''}" oninput="updatePreview()">
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
+      <input type="text" name="startDate" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${exp.start_date || ''}" oninput="updatePreview()">
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+      <input type="text" name="endDate" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${exp.end_date || ''}" oninput="updatePreview()">
+      <label class="flex items-center mt-1 text-sm text-gray-600">
+        <input type="checkbox" name="isCurrent" class="mr-2" ${exp.is_current ? 'checked' : ''}> Currently working here
+      </label>
+    </div>
+    <div class="sm:col-span-2">
+      <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+      <textarea name="description" class="form-input w-full px-3 py-2 rounded-md text-sm resize-none" rows="3" oninput="updatePreview()">${exp.description || ''}</textarea>
+    </div>
+  </div>
+      `;
+      
+
+      container.appendChild(entry);
+    });
+
+    updatePreview();
+  }
+  window.addEventListener('DOMContentLoaded', () => {
+    populateExperience(parsedExperience);
+  });
     // Add education entry
     function addEducation() {
       educationCount++;
@@ -407,8 +528,8 @@
             <input type="number" class="form-input w-full px-3 py-2 rounded-md text-sm" placeholder="2023" min="1900" max="2030" oninput="updatePreview()">
           </div>
           <div class="sm:col-span-2">
-            <label class="block text-sm font-medium text-gray-700 mb-1">GPA (Optional)</label>
-            <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" placeholder="3.8/4.0" oninput="updatePreview()">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Percentage or GPA (Optional)</label>
+            <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" placeholder="85 or 3.8/4.0" oninput="updatePreview()">
           </div>
         </div>
       `;
@@ -416,6 +537,56 @@
       container.appendChild(entry);
       updatePreview();
     }
+
+  function populateEducation(educationData) {
+  if (!educationData || educationData.length === 0) return;
+
+  const container = document.getElementById('educationContainer');
+  container.innerHTML = ''; // Clear any pre-added field
+
+  educationData.forEach((edu, index) => {
+    const entry = document.createElement('div');
+    entry.className = 'border border-gray-200 rounded-md p-4 bg-gray-50';
+    entry.id = `education-${index + 1}`;
+
+    entry.innerHTML = `
+      <div class="flex items-center justify-between mb-3">
+        <h4 class="font-medium text-gray-900">Education ${index + 1}</h4>
+        <button onclick="removeEntry('education-${index + 1}')" class="btn-danger text-white px-2 py-1 rounded text-xs">Remove</button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Degree</label>
+          <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${edu.degree || edu.course || ''}" oninput="updatePreview()">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Field of Study</label>
+          <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${edu.field_of_study || ''}" oninput="updatePreview()">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Institution</label>
+          <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${edu.institution || edu.institiution || ''}" oninput="updatePreview()">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Year</label>
+          <input type="number" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${edu.year || ''}" oninput="updatePreview()">
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-gray-700 mb-1">GPA (Optional)</label>
+          <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${edu.percentage || edu.gpa || ''}" oninput="updatePreview()">
+        </div>
+      </div>`;
+
+    container.appendChild(entry);
+  });
+
+  educationCount = educationData.length;
+  updatePreview();
+}
+
+  window.addEventListener('DOMContentLoaded', () => {
+    populateEducation(parsedEducation);
+  });
 
     // Add project entry
     function addProject() {
@@ -446,8 +617,8 @@
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
             <textarea class="form-input w-full px-3 py-2 rounded-md text-sm resize-none" rows="3" placeholder="• Brief description of the project
-• Key features and achievements
-• Technologies used and challenges solved" oninput="updatePreview()"></textarea>
+          • Key features and achievements
+          • Technologies used and challenges solved" oninput="updatePreview()"></textarea>
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Project URL (Optional)</label>
@@ -459,7 +630,56 @@
       container.appendChild(entry);
       updatePreview();
     }
+    function populateProjects(projectsData) {
+  if (!Array.isArray(projectsData)) return;
 
+  projectsData.forEach((proj) => {
+    projectCount++;
+    const container = document.getElementById('projectsContainer');
+    const entry = document.createElement('div');
+    entry.className = 'border border-gray-200 rounded-md p-4 bg-gray-50';
+    entry.id = `project-${projectCount}`;
+
+    const tools = Array.isArray(proj.tools) ? proj.tools.join(", ") : "";
+
+    entry.innerHTML = `
+      <div class="flex items-center justify-between mb-3">
+        <h4 class="font-medium text-gray-900">Project ${projectCount}</h4>
+        <button onclick="removeEntry('project-${projectCount}')" class="btn-danger text-white px-2 py-1 rounded text-xs">
+          Remove
+        </button>
+      </div>
+      <div class="grid grid-cols-1 gap-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Project Name</label>
+            <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${proj.title || ''}" placeholder="E-commerce Website" oninput="updatePreview()">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Technologies</label>
+            <input type="text" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${proj.tools || ''}" placeholder="React, Node.js, MongoDB" oninput="updatePreview()">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+          <textarea class="form-input w-full px-3 py-2 rounded-md text-sm resize-none" rows="3" oninput="updatePreview()">${proj.description || ''}</textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Project URL (Optional)</label>
+          <input type="url" class="form-input w-full px-3 py-2 rounded-md text-sm" value="${proj.github_url || ''}" placeholder="https://github.com/username/project" oninput="updatePreview()">
+        </div>
+      </div>
+    `;
+
+    container.appendChild(entry);
+  });
+
+  updatePreview();
+}
+window.addEventListener('DOMContentLoaded', () => {
+  
+  populateProjects(parsedProjects);       // new line
+});
     // Remove entry
     function removeEntry(entryId) {
       const entry = document.getElementById(entryId);
@@ -538,7 +758,8 @@
           email: document.getElementById('email').value,
           phone: document.getElementById('phone').value,
           location: document.getElementById('location').value,
-          summary: document.getElementById('summary').value
+          summary: document.getElementById('summary').value,
+          
         },
         experience: [],
         education: [],
@@ -551,17 +772,22 @@
 
       // Collect experience data
       document.querySelectorAll('[id^="experience-"]').forEach(exp => {
-        const inputs = exp.querySelectorAll('input, textarea');
-        const isCurrentJob = exp.querySelector('input[type="checkbox"]').checked;
-        resumeData.experience.push({
-          jobTitle: inputs[0].value,
-          company: inputs[1].value,
-          startDate: inputs[2].value,
-          endDate: isCurrentJob ? '' : inputs[3].value,
-          isCurrent: isCurrentJob,
-          description: inputs[4].value
-        });
+      const jobTitle = exp.querySelector('input[name="jobTitle"]').value;
+      const company = exp.querySelector('input[name="company"]').value;
+      const startDate = exp.querySelector('input[name="startDate"]').value;
+      const endDateInput = exp.querySelector('input[name="endDate"]');
+      const isCurrentJob = exp.querySelector('input[type="checkbox"]').checked;
+      const description = exp.querySelector('textarea[name="description"]').value;
+
+      resumeData.experience.push({
+        jobTitle,
+        company,
+        startDate,
+        endDate: isCurrentJob ? '' : endDateInput.value,
+        isCurrent: isCurrentJob,
+        description
       });
+    });
 
       // Collect education data
       document.querySelectorAll('[id^="education-"]').forEach(edu => {
@@ -601,9 +827,6 @@
     function generateSessionId() {
       return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     }
-
-    // Remove mobile preview functions
-    // toggleMobilePreview and updateMobilePreview functions removed
 
     // Proceed to templates
     function proceedToTemplates() {

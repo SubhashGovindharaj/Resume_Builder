@@ -329,72 +329,63 @@
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-start">
-      
-      <!-- Left Side - Resume Preview & Stats -->
-      <div class="space-y-8 animate__animated animate__fadeInLeft">
-        
-        <!-- Resume Preview -->
-        <div class="resume-preview rounded-3xl p-6">
-          <h2 class="text-2xl font-semibold mb-6 text-center">Enhanced Resume Preview</h2>
-          
-          <div class="aspect-[3/4] bg-gray-50 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-200 mb-6">
-            <div class="text-center">
-              <svg class="w-20 h-20 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <p class="text-lg font-medium text-gray-600">Your Enhanced Resume</p>
-              <p class="text-sm text-gray-500 mt-1">Professional • ATS-Optimized • Modern Design</p>
-            </div>
-          </div>
+    <!-- FIXED VERSION OF GRID LAYOUT SECTION -->
+<div class="grid lg:grid-cols-[2fr_1fr] gap-12 items-start">
+  <!-- LEFT SIDE: Resume Preview + Stats + Enhancements -->
+  <div class="space-y-8 animate__animated animate__fadeInLeft w-full">
+    <!-- Resume Preview -->
+    <div class="resume-preview rounded-3xl p-6">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Enhanced Resume Preview</h2>
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden border h-[750px]">
+        <iframe src="{{ url_for('preview_resume', session_id=session_id) }}" class="w-full h-full border-0" title="Resume Preview"></iframe>
+      </div>
+    </div>
 
-          <!-- Enhancement Stats -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="stat-item text-center p-4 bg-blue-50 rounded-xl">
-              <div class="text-2xl font-bold text-blue-600">95%</div>
-              <div class="text-sm text-blue-800">ATS Score</div>
-            </div>
-            <div class="stat-item text-center p-4 bg-green-50 rounded-xl">
-              <div class="text-2xl font-bold text-green-600">12+</div>
-              <div class="text-sm text-green-800">Improvements</div>
-            </div>
-          </div>
-        </div>
+           <!-- Enhancement Stats -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="stat-item text-center p-4 bg-blue-50 rounded-xl">
+        <div class="text-2xl font-bold text-blue-600">95%</div>
+        <div class="text-sm text-blue-800">ATS Score</div>
+      </div>
+      <div class="stat-item text-center p-4 bg-green-50 rounded-xl">
+        <div class="text-2xl font-bold text-green-600">12+</div>
+        <div class="text-sm text-green-800">Improvements</div>
+      </div>
+    </div>
 
         <!-- Enhancement Summary -->
-        <div class="success-card rounded-3xl p-6">
-          <h3 class="text-lg font-semibold mb-4">What We Enhanced</h3>
-          <div class="space-y-3">
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Professional formatting applied</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>ATS-friendly structure optimized</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Keywords strategically placed</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Modern design template applied</span>
-            </div>
-          </div>
+    <div class="success-card rounded-3xl p-6">
+      <h3 class="text-lg font-semibold mb-4">What We Enhanced</h3>
+      <div class="space-y-3">
+        <div class="flex items-center">
+          <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span>Professional formatting applied</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span>ATS-friendly structure optimized</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span>Keywords strategically placed</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span>Modern design template applied</span>
         </div>
       </div>
-
+    </div>
+  </div>
       <!-- Right Side - Download Actions -->
-      <div class="animate__animated animate__fadeInRight">
+      <div class="animate__animated animate__fadeInRight w-full max-w-md space-y-6">
         <div class="success-card rounded-3xl p-8">
           <h2 class="text-2xl font-semibold mb-8 text-center">Download Your Resume</h2>
           
@@ -496,44 +487,36 @@
 
     // Download resume function
     function downloadResume() {
-      const btn = event.target;
-      const originalText = btn.innerHTML;
-      
-      // Show loading state
-      btn.innerHTML = `
-        <svg class="animate-spin w-5 h-5 inline-block mr-2" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        Preparing Download...
-      `;
-      btn.disabled = true;
-      
-      // Simulate download preparation
-      setTimeout(() => {
-        // Create a mock download
-        const link = document.createElement('a');
-        link.href = '#'; // In real implementation, this would be the actual PDF URL
-        link.download = 'Enhanced_Resume.pdf';
-        // document.body.appendChild(link);
-        // link.click();
-        // document.body.removeChild(link);
-        
-        // For demo purposes, just show success message
-        btn.innerHTML = `
-          <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-          Download Started!
-        `;
-        
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-          showSuccessToast('Resume downloaded successfully!');
-        }, 2000);
-      }, 1500);
-    }
+  const btn = event.target.closest('button');
+  const originalText = btn.innerHTML;
+
+  btn.innerHTML = `...Loading...`; // same loading spinner
+  btn.disabled = true;
+
+  const sessionData = JSON.parse(sessionStorage.getItem('resumeSession') || '{}');
+  const sessionId = sessionData?.sessionId;
+
+  if (!sessionId) {
+    alert("Session ID not found.");
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+    return;
+  }
+
+  const downloadUrl = `/download-pdf?sessionId=${sessionId}`;
+  const link = document.createElement('a');
+  link.href = downloadUrl;
+  link.download = 'Enhanced_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  btn.innerHTML = `Download Started!`;
+  setTimeout(() => {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+  }, 2000);
+}
 
     // Check ATS Score function
   function checkATSScore() {

@@ -305,13 +305,16 @@
 
         <!-- Action Buttons -->
         <div class="space-y-4 hidden" id="actionButtons">
-          <button onclick="enhanceResume()" class="modern-btn w-full text-white py-4 rounded-xl font-semibold text-lg">
-            Enhance Resume
-            <svg class="w-5 h-5 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </button>
-          
+          <!-- Edit Resume -->
+          <a href="/build-resume?from_upload=true">
+            <button class="modern-btn w-full text-white py-4 rounded-xl font-semibold text-lg bg-blue-600 hover:bg-blue-700">
+              Edit Resume
+              <svg class="w-5 h-5 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5h2M12 7v12m-7-4h10" />
+              </svg>
+            </button>
+          </a>
+                    
           <button onclick="checkATSScore()" class="btn-secondary modern-btn w-full text-white py-4 rounded-xl font-semibold text-lg">
             Check ATS Score
             <svg class="w-5 h-5 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

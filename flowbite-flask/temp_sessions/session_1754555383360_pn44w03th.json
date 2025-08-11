@@ -1,0 +1,59 @@
+{
+  "personalInfo": {
+    "fullName": "NILOFER MUBEEN",
+    "jobTitle": "DATA SCIENTIST",
+    "email": "nilomubeen@gmail.com",
+    "phone": "+91-9500026279",
+    "location": "",
+    "summary": "Passionate Data Science enthusiast, skilled in data analysis, statistical modeling, and machine learning. Proficient in python, with hands-on experience in data manipulation, cleaning, and visualization. Strong problem-solving abilities and a passion for extracting actionable insights from complex datasets."
+  },
+  "experience": [],
+  "education": [
+    {
+      "degree": "",
+      "field": "Professional & master data Science",
+      "institution": "IIT-M",
+      "year": "2024",
+      "gpa": ""
+    },
+    {
+      "degree": "B.E",
+      "field": "Electronics and Communication Engineering",
+      "institution": "ANNA UNIVERSITY",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "Python, Pandas, Numpy, Scikit-learn, Machine learning, Deep learning, Artificial Intelligence, NLP, PostGreSQL, Mongodb, PowerBI, Tableau, Matplotlib, Seaborn, Plotly",
+    "soft": "Strong problem-solving abilities, Passion for extracting actionable insights from complex datasets"
+  },
+  "projects": [
+    {
+      "name": "AI-Powered Text to PyMongo Query Generator",
+      "technologies": "Pandas,Streamlit,Langchain_groq,Pymongo",
+      "description": "Developed an automated data query and retrieval system using large language models (llms) to dynamically generate mongodb queries from user inputs.",
+      "url": "https://github.com/nilofermubeen/AI-Powered-Text-to-PyMongo-Query-Generator/tree/main"
+    },
+    {
+      "name": "Smart connect AI - Cold-Email-Generator",
+      "technologies": "Groq,LangChain,Streamlit,Vector Database(Chromadb)",
+      "description": "Designed an AI-driven tool tailored for service companies that automates cold email generation by extracting job listings from career pages.",
+      "url": "https://github.com/nilofermubeen/SmartConnect-AI_Cold_email_generator"
+    },
+    {
+      "name": "Smart Banking System",
+      "technologies": "Python,PostGreSQL,Streamlit",
+      "description": "Develop an intelligent banking application that integrates standard banking operations with personalized financial analysis.",
+      "url": "https://github.com/NiloferMubeen/Banking_Simulation_system"
+    },
+    {
+      "name": "CarDekho Used Car Price Prediction",
+      "technologies": "Pandas,Numpy,Feature importance,Regression algorithms,Hyper Parameter tuning,PowerBI",
+      "description": "Develop a robust data science model capable of accurately predicting the prices of used cars.",
+      "url": "https://github.com/nilofermubeen/project8---car_price_prediction-carsdekho-"
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754555383360_pn44w03th"
+}

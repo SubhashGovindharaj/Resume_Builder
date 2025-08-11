@@ -1,0 +1,78 @@
+{
+  "personalInfo": {
+    "fullName": "ARUNRAJ R U",
+    "jobTitle": "Data Science Specialist",
+    "email": "ruarunraj2013@gmail.com",
+    "phone": "9042608713",
+    "location": "Chennai, Tamil Nadu",
+    "summary": ""
+  },
+  "experience": [
+    {
+      "jobTitle": "Senior Service Advisor",
+      "company": "KUN Capital Motors PVT LTD",
+      "startDate": "Feb 2022",
+      "endDate": "Jan 2024",
+      "isCurrent": false,
+      "description": "on"
+    },
+    {
+      "jobTitle": "Service Advisor",
+      "company": "Balaji Motors PVt LTD",
+      "startDate": "Jul 2021",
+      "endDate": "Jan 2022",
+      "isCurrent": false,
+      "description": "on"
+    },
+    {
+      "jobTitle": "Service Advisor",
+      "company": "Lanson Motors PVT LTD",
+      "startDate": "Jun 2018",
+      "endDate": "Jul 2021",
+      "isCurrent": false,
+      "description": "on"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master's program",
+      "field": "Data Science",
+      "institution": "Guvi",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "B.E",
+      "field": "Mechanical Engineering",
+      "institution": "Valliammai Engineering College",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "Python, MySQL, Machine Learning, Deep Learning, NLP, Power BI, Matplotlib, Seaborn, Data analysis, Statistical analysis, Predictive analysis",
+    "soft": ""
+  },
+  "projects": [
+    {
+      "name": "YouTube Data Harvesting and Warehousing",
+      "technologies": "Python, Web scraping, MySQL, Streamlit",
+      "description": "Automated the extraction of YouTube data (channels, videos, comments) using Python and the YouTube Data API",
+      "url": ""
+    },
+    {
+      "name": "Industrial Copper Modeling",
+      "technologies": "Scikit-learn, Random Forest, Decision Tree",
+      "description": "Configured a machine learning regression model to predict copper industry selling prices",
+      "url": ""
+    },
+    {
+      "name": "Sentiment Analysis",
+      "technologies": "NLTK, Spacy, TensorFlow, Hugging Face",
+      "description": "Developed an NLP-based sentiment analysis model to classify over 1000 customer feedback entries into positive, negative and neutral categories",
+      "url": ""
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754582217269_mrx3wihtj"
+}

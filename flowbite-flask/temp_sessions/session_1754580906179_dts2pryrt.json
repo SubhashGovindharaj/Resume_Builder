@@ -1,0 +1,53 @@
+{
+  "personalInfo": {
+    "fullName": "JaiKarthick",
+    "jobTitle": "Data Analyst",
+    "email": "jaikarthick929@gmail.com",
+    "phone": "+91 9566444930",
+    "location": "",
+    "summary": "Highly motivated and skilled Data Analyst with a Bachelor's degree in Data Science from Amrita University, seeking an opportunity to apply comprehensive data analysis skills in a professional setting."
+  },
+  "experience": [],
+  "education": [
+    {
+      "degree": "Advanced Programming Professional",
+      "field": "Master Data Science",
+      "institution": "IIT-M",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "Bachelor of Computer Application",
+      "field": "Data Science",
+      "institution": "Amrita Vishwa Vidyapeetham",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "Python, SQL, Pandas, Numpy, Data Cleaning, EDA, Statistical Analysis, PowerBI, Matplotlib, Seaborn, Streamlit, Machine Learning, Random Forest, Logistic Regression, K-Means, Recommendation Systems, Statistics, Excel",
+    "soft": ""
+  },
+  "projects": [
+    {
+      "name": "DataSpark - Illuminating Insights for Global Electronics",
+      "technologies": "Python,SQL,PowerBI",
+      "description": "Cleaned multiple datasets, analyzed customer demographics and purchasing patterns, executed SQL queries, and developed interactive Power BI dashboards",
+      "url": ""
+    },
+    {
+      "name": "Car Dheko - Used Car Price Prediction",
+      "technologies": "Python,Machine Learning,EDA,ETL,Streamlit",
+      "description": "Cleaned unstructured datasets, conducted EDA, implemented and optimized a Random Forest model, and generated an interactive Streamlit web application",
+      "url": ""
+    },
+    {
+      "name": "Predictive Analysis and Recommendation System in Banking",
+      "technologies": "Python,Machine Learning,Data Science,SQL",
+      "description": "Created synthetic records, built a user-based recommendation system, implemented K-Means Clustering, and designed a predictive model",
+      "url": ""
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754580906179_dts2pryrt"
+}

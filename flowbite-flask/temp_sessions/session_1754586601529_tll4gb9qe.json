@@ -1,0 +1,125 @@
+{
+  "personalInfo": {
+    "fullName": "Juan Jose Carin",
+    "jobTitle": "Data Scientist",
+    "email": "juanjoose.carin@gmail.com",
+    "phone": "650-336-4590",
+    "location": "Mountain View, CA 94041",
+    "summary": "Passionate about data analysis and experiments, mainly focused on user behavior, experience, and engagement, with a solid background in data science and statistics, and extensive experience using data insights to drive business growth."
+  },
+  "experience": [
+    {
+      "jobTitle": "Data Scientist",
+      "company": "CONENTO",
+      "startDate": "Jan. 2016",
+      "endDate": "Mar. 2016",
+      "isCurrent": false,
+      "description": "Designed and implemented the ETL pipeline for a predictive model of traffic on the main roads in eastern Spain. Automated scripts in R to extract, transform, clean, and load into MySQL data from multiple data sources."
+    },
+    {
+      "jobTitle": "Data Scientist",
+      "company": "CONENTO",
+      "startDate": "Jun. 2014",
+      "endDate": "Sep. 2014",
+      "isCurrent": false,
+      "description": "Designed an experiment for Google Spain to measure the impact of YouTube ads on the sales of a car manufacturer's dealer network."
+    },
+    {
+      "jobTitle": "Head of Sales, Spain & Portugal \u2013 Test &Measurement dept.",
+      "company": "YOKOGAWA",
+      "startDate": "Feb. 2009",
+      "endDate": "Aug. 2013",
+      "isCurrent": false,
+      "description": "Applied analysis of sales and market trends to decide the direction of the department. Led a team of 7 people. Increased revenue by 6.3%, gross profit by 4.2%, and operating income by 146%."
+    },
+    {
+      "jobTitle": "Sales Engineer \u2013 Test & Measurement dept.",
+      "company": "YOKOGAWA",
+      "startDate": "Apr. 2008",
+      "endDate": "Jan. 2009",
+      "isCurrent": false,
+      "description": "Promoted to head of sales after 5 months leading the sales team."
+    },
+    {
+      "jobTitle": "Sales & Application Engineer",
+      "company": "AYSCOM",
+      "startDate": "Sep. 2004",
+      "endDate": "Mar. 2008",
+      "isCurrent": false,
+      "description": "Exceeded sales target every year from 2005 to 2007."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master",
+      "field": "Information and Data Science",
+      "institution": "University of California, Berkeley",
+      "year": "2016",
+      "gpa": ""
+    },
+    {
+      "degree": "M.S.",
+      "field": "Statistical and Computational Information Processing",
+      "institution": "Universidad Polit\u00e9cnica de Madrid",
+      "year": "2014",
+      "gpa": ""
+    },
+    {
+      "degree": "M.S.",
+      "field": "Telecommunication Engineering",
+      "institution": "Universidad Polit\u00e9cnica de Madrid",
+      "year": "2005",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "R, Python, SQL, Hadoop, Hive, MrJob, Tableau, Git, AWS, SPSS, SAS, Matlab, Spark, Storm, Bash, EViews, Demetra+, D3.js, Gephi, Neo4j, QGIS",
+    "soft": ""
+  },
+  "projects": [
+    {
+      "name": "SmartCam",
+      "technologies": "Python, OpenCV, TensorFlow, AWS (EC2, S3, DynamoDB)",
+      "description": "A scalable cloud-based video monitoring system that features motion detection, face counting, and image recognition.",
+      "url": "juanjocarin.github.io"
+    },
+    {
+      "name": "Implementation of the Shortest Path and PageRank algorithms with the Wikipedia graph dataset",
+      "technologies": "Machine Learning at Scale, Hadoop, MrJob, Python, AWS EC2, AWS S3",
+      "description": "Using a graph dataset of almost half a million nodes.",
+      "url": "juanjocarin.github.io"
+    },
+    {
+      "name": "Forest cover type prediction",
+      "technologies": "Python, Scikit-Learn, Matplotlib",
+      "description": "A Kaggle competition: predictions of the predominant kind of tree cover, from strictly cartographic variables such as elevation and soil type, using random forests, SVMs, kNNs, Naive Bayes, Gradient Descent, GMMs, \u2026",
+      "url": "juanjocarin.github.io"
+    },
+    {
+      "name": "Redefining the job search process",
+      "technologies": "Hadoop HDFS, Hive, Spark, Python, AWS EC2, Tableau",
+      "description": "A pipeline that combines data from Indeed API and the U.S. Census Bureau to select the best locations for data scientists based on the number of job postings, housing cost, etc.",
+      "url": "juanjocarin.github.io"
+    },
+    {
+      "name": "A fresh perspective on Citi Bike",
+      "technologies": "Tableau, SQLite",
+      "description": "An interactive website to visualize NYC Citi Bike bicycle sharing service.",
+      "url": "juanjocarin.github.io"
+    },
+    {
+      "name": "Investigating the effect of competition on the ability to solve arithmetic problems",
+      "technologies": "R",
+      "description": "A randomized controlled trial in which 300+ participants were assigned to a control group or one of two test groups to evaluate the effect of competition.",
+      "url": "juanjocarin.github.io"
+    },
+    {
+      "name": "Prediction of customer churn for a mobile network carrier",
+      "technologies": "SAS",
+      "description": "Predictions from a sample of 45,000+ customers, using tree decisions, logistic regression, and neural networks.",
+      "url": "juanjocarin.github.io"
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754586601529_tll4gb9qe"
+}

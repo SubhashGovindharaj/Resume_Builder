@@ -1,0 +1,70 @@
+{
+  "personalInfo": {
+    "fullName": "PUSHPARAJ",
+    "jobTitle": "Data Scientist",
+    "email": "pushparajmadhavan16@gmail.com",
+    "phone": "+91 9043482608",
+    "location": "Chennai, Tamil Nadu, India",
+    "summary": ""
+  },
+  "experience": [
+    {
+      "jobTitle": "Test Automation Engineer",
+      "company": "Cigniti Technologies",
+      "startDate": "2021",
+      "endDate": "2024",
+      "isCurrent": false,
+      "description": "on"
+    },
+    {
+      "jobTitle": "Manual Tester",
+      "company": "Amazon Development Center",
+      "startDate": "2019",
+      "endDate": "2021",
+      "isCurrent": false,
+      "description": "on"
+    }
+  ],
+  "education": [
+    {
+      "degree": "",
+      "field": "Professional & Master Data Science",
+      "institution": "IIT-M",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "Bachelor",
+      "field": "Computer Applications",
+      "institution": "Vels University, Pallavaram",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "Python, Java, Data Visualization, SQL, LLM, Machine Learning, NLP, Deep Learning, Selenium, API, PowerBI, Hugging Face, Google Analytics, AWS",
+    "soft": ""
+  },
+  "projects": [
+    {
+      "name": "CarDekho Vehicle Recommendation System",
+      "technologies": "EDA, Python, Recommendation Engine",
+      "description": "Built a machine learning solution to predict used car prices, enhanced customer experience and pricing accuracy",
+      "url": ""
+    },
+    {
+      "name": "Dominos Predictive Purchase Order System",
+      "technologies": "EDA, Time Series Forecasting, Predicitive Modeling",
+      "description": "Developed a predictive model to forecast sales and optimized ingredient orders, reducing waste and preventing stockouts in the food service industry",
+      "url": ""
+    },
+    {
+      "name": "Sentiment Analysis of IMDB Movie Reviews",
+      "technologies": "NLP, Deep Learning, Model Optimisation",
+      "description": "Built a deep learning solution using LSTM to classify movie reviews as positive or negative, leveraging natural language processing techniques",
+      "url": ""
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754581710040_n6immj3qm"
+}

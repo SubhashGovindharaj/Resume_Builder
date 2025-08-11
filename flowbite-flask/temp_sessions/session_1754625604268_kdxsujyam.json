@@ -1,0 +1,64 @@
+{
+  "personalInfo": {
+    "fullName": "John Doe",
+    "jobTitle": "Senior Data Scientist",
+    "email": "j.doe123@live.com",
+    "phone": "(716) 555-0100",
+    "location": "Buffalo, New York 98052",
+    "summary": "Result-driven Machine Learning Data Scientist with 5+ years of experience designing, deploying, and optimizing ML models across finance, e-commerce, and security domains. Skilled in transforming messy real-world data into actionable insights. Passionate about building scalable solutions using AI."
+  },
+  "experience": [
+    {
+      "jobTitle": "Senior Data Scientist",
+      "company": "Tshark",
+      "startDate": "Jul 2021",
+      "endDate": "Present",
+      "isCurrent": false,
+      "description": "Developed a churn prediction model using LightGBM package in Python, resulting in the reduction of churn rate by 20% in last 6 months. Built an automated anomaly detection pipeline in PySpark for access logs (1B+ records), reducing triage time by 45%. Collaborating with product managers and engineering to productionize ML solutions in Azure ML, improving deployment cycle by 25%, meeting the service level agreement of 99.99% availability. Owning the end-to-end lifecycle of the data science projects as a team lead, mentoring and guiding the junior data scientists for their active contribution."
+    },
+    {
+      "jobTitle": "Machine Learning Engineer",
+      "company": "Stripe",
+      "startDate": "Jan 2019",
+      "endDate": "Jun 2021",
+      "isCurrent": false,
+      "description": "Built a real-time fraud detection model using decision trees and ensemble methods, reducing chargeback rates by 18%. Implemented feature store for transaction-based signals, improving experiment velocity by 11%. Led model monitoring efforts with MLflow, introducing drift detection and retraining triggers. Created data transformation pipeline in Apache Airflow to orchestrate and schedule the jobs for batch preprocessing, improving the feature engineering process for training ML models."
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S.",
+      "field": "Data Science",
+      "institution": "University of California, San Diego",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "B.E.",
+      "field": "Computer Engineering",
+      "institution": "Tribhuvan University, Nepal",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "Python, SQL, Git, Jupyter, Bash, Pandas, NumPy, PySpark, Airflow, Scikit-learn, XGBoost, TensorFlow, Keras, MLflow, OpenCV, LangChain, AWS, Azure ML, GCP BigQuery",
+    "soft": ""
+  },
+  "projects": [
+    {
+      "name": "ML Risk Profiler for Security",
+      "technologies": "",
+      "description": "Built a multi-label classifier using embeddings + LightGBM for categorizing exception risk types.",
+      "url": "https://yourportfolio.com/ml-risk-profiler"
+    },
+    {
+      "name": "Sales Forecasting Dashboard",
+      "technologies": "",
+      "description": "Integrated LSTM model with Flask dashboard to predict weekly sales across regions. Resulted in 20% improved accuracy vs baseline.",
+      "url": "https://yourportfolio.com/sales-forecasting"
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754625604268_kdxsujyam"
+}

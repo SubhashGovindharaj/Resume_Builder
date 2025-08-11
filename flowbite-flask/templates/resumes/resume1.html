@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ data.personalInfo.fullName }} Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Open Sans', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 pt-6 text-sm">
+  <div class="w-full pt-6 px-6">
+
+    <!-- Header -->
+    <header class="flex items-center space-x-6 border-b pb-6">
+      <div>
+        <h1 class="text-4xl font-bold text-gray-800">
+          {{ data.personalInfo.fullName.split()[0] }}
+          <span class="text-teal-500">{{ data.personalInfo.fullName.split()[-1] }}</span>
+        </h1>
+        <p class="text-xs tracking-widest text-gray-500 uppercase">{{ data.personalInfo.jobTitle }}</p>
+      </div>
+    </header>
+
+    <!-- Contact -->
+    <div class="mt-4 flex flex-wrap items-center justify-between rounded bg-gray-800 px-4 py-2 text-xs text-white">
+      
+      {% if data.personalInfo.email %}
+      <span class="flex items-center space-x-2">
+        <svg class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="..." /></svg>
+        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M2 4.5a2.5 2.5 0 012.5-2.5h15a2.5 2.5 0 012.5 2.5v15a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 19.5v-15zM4.5 5a.5.5 0 00-.5.5v.63l8 5.25 8-5.25V5.5a.5.5 0 00-.5-.5h-15zM20 7.56l-7.37 4.84a1.5 1.5 0 01-1.66 0L4.5 7.56V19.5a.5.5 0 00.5.5h15a.5.5 0 00.5-.5V7.56z"/></svg>
+        <span>{{ data.personalInfo.email }}</span>
+      </span>
+      {% endif %}
+      {% if data.personalInfo.phone %}
+      <span class="flex items-center space-x-2">
+        <svg class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="..." /></svg>
+        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1C9.61 21.5 2.5 14.39 2.5 5a1 1 0 011-1H7a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1.003 1.003 0 01-.21 1.11l-2.2 2.2z"/></svg>
+        <span>{{ data.personalInfo.phone }}</span>
+      </span>
+      {% endif %}
+      {% if data.personalInfo.location %}
+      <span class="flex items-center space-x-2">
+        <svg class="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="..." /></svg>
+        <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+        <span>{{ data.personalInfo.location }}</span>
+      </span>
+      {% endif %}
+    </div>
+
+    <!-- Main Grid -->
+    <div class="mt-6 grid grid-cols-3 gap-6">
+      
+      <!-- Left Column (2/3) -->
+      <div class="col-span-2 space-y-6">
+
+        {% if data.personalInfo.summary %}
+        <!-- Summary -->
+        <section>
+          <div class="mb-2 flex items-center space-x-2">
+            <div class="rounded-full bg-teal-500 p-2 text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 9h8M8 13h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <h2 class="rounded bg-gray-200 px-2 py-1 text-base font-semibold tracking-wider text-gray-700 uppercase">Summary</h2>
+          </div>
+          <p class="text-sm leading-[1.5] text-justify">{{ data.personalInfo.summary }}</p>
+        </section>
+        {% endif %}
+
+        {% if data.experience %}
+        <!-- Experience -->
+        <section>
+          <div class="mb-2 flex items-center space-x-2">
+            <div class="rounded-full bg-teal-500 p-2 text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 10h11M9 21V6m-6 9h18"/></svg>
+          </div>
+            <h2 class="rounded bg-gray-200 px-2 py-1 text-base font-semibold tracking-wider text-gray-700 uppercase">Experience</h2>
+          </div>
+          <div class="space-y-4 text-xs">
+            {% for job in data.experience %}
+            <div>
+              <p class="font-semibold">{{ job.jobTitle }} <span class="font-normal text-gray-500 italic">{{ job.company }} {{ job.startDate }} - {{ job.endDate or 'Present' }}</span></p>
+              <ul class="mt-1 list-disc space-y-1 pl-5 text-justify">
+                {% for line in job.description.split('\n') %}
+                <li>{{ line }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
+        {% if data.projects %}
+        <!-- Projects -->
+        <section>
+          <div class="mb-2 flex items-center space-x-2">
+            <div class="rounded-full bg-teal-500 p-2 text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+            <h2 class="rounded bg-gray-200 px-2 py-1 text-base font-semibold tracking-wider text-gray-700 uppercase">Projects</h2>
+          </div>
+          <div class="space-y-4 text-xs text-justify break-words leading-relaxed">
+            {% for proj in data.projects %}
+            <div class="relative pl-4">
+              <span class="absolute left-0 top-1 text-teal-500 font-bold text-base">•</span>
+              <div>
+                <p class="font-semibold">{{ proj.name }}</p>
+                <p class="italic text-gray-500">{{ proj.technologies }}</p>
+                <p class="mt-1 leading-relaxed text-justify">{{ proj.description }}</p>
+
+                {% if proj.url %}
+                <p class="mt-1"><a href="{{ proj.url }}" class="text-blue-600 underline text-xs">{{ proj.url }}</a></p>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+      </div>
+
+      <!-- Right Column (1/3) -->
+      <div class="col-span-1 space-y-6">
+
+        {% if data.skills.technical or data.skills.soft %}
+        <!-- Skills -->
+        <section>
+          <div class="mb-2 flex items-center space-x-2">
+            <div class="rounded-full bg-teal-500 p-2 text-white">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m20-10a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h2 class="rounded bg-gray-200 px-2 py-1 text-base font-semibold tracking-wider text-gray-700 uppercase">Skills</h2>
+          </div>
+          <ul class="list-disc space-y-1 pl-5 text-sm leading-[1.5]">
+            {% set all_skills = (data.skills.technical.split(',') + data.skills.soft.split(',')) | map('trim') | reject('equalto', '') %}
+            {% for skill in all_skills %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        {% if data.education %}
+        <!-- Education -->
+        <section>
+          <div class="mb-2 flex items-center space-x-2">
+            <div class="rounded-full bg-teal-500 p-2 text-white"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5zm0 0v7"/></svg>
+          </div>
+            <h2 class="rounded bg-gray-200 px-2 py-1 text-base font-semibold tracking-wider text-gray-700 uppercase">Education</h2>
+          </div>
+          <div class="space-y-2 text-sm leading-[1.5]">
+            {% for edu in data.education %}
+            <div>
+              <p class="font-semibold">{{ edu.degree }}</p>
+              <p>{{ edu.institution }} <span class="text-gray-500 italic">{{ edu.year }}</span></p>
+              <p>{{ edu.field }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
+        {% if data.certifications %}
+        <!-- Certifications -->
+        <section>
+          <div class="mb-2 flex items-center space-x-2">
+            <div class="rounded-full bg-teal-500 p-2 text-white"><svg class="h-4 w-4" ...></svg></div>
+            <h2 class="rounded bg-gray-200 px-2 py-1 text-base font-semibold tracking-wider text-gray-700 uppercase">Certifications</h2>
+          </div>
+          <ul class="list-none space-y-2 text-xs">
+            {% for cert in data.certifications %}
+            <li>
+              <span class="font-semibold">{{ cert.name }}</span><br />
+              {{ cert.authority }} {% if cert.date %}<span class="text-gray-500">{{ cert.date }}</span>{% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

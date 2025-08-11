@@ -1,0 +1,92 @@
+{
+  "personalInfo": {
+    "fullName": "Rajkumar Vijay",
+    "jobTitle": "Machine Learning Engineer",
+    "email": "raj_amudha07@yahoo.co.in",
+    "phone": "9962480101",
+    "location": "Chennai, India",
+    "summary": "Certified Data Scientist with hands-on experience in statistical modeling, data mining, and programming. Proficient in Python, SQL, and machine learning frameworks. Eager to leverage academic knowledge and project experience to contribute to impactful data science initiatives."
+  },
+  "experience": [
+    {
+      "jobTitle": "Group Coordinator",
+      "company": "Zenmed Private Solutions",
+      "startDate": "07/2017",
+      "endDate": "02/2024",
+      "isCurrent": false,
+      "description": "Led operations in healthcare insurance claims, optimizing workflows. Streamlined insurance resolution processes and ensured compliance."
+    },
+    {
+      "jobTitle": "Sr. Accounts Receivable",
+      "company": "First Source Private Limited",
+      "startDate": "08/2015",
+      "endDate": "06/2017",
+      "isCurrent": false,
+      "description": "Managed account receivables and customer relations to improve recovery rates."
+    },
+    {
+      "jobTitle": "Sr. Accounts Receivable",
+      "company": "Technosoft Private Limited",
+      "startDate": "06/2014",
+      "endDate": "08/2015",
+      "isCurrent": false,
+      "description": "Communicated with clients to resolve billing discrepancies and ensure accuracy."
+    },
+    {
+      "jobTitle": "Accounts Receivable",
+      "company": "Omega Healthcare",
+      "startDate": "02/2013",
+      "endDate": "06/2014",
+      "isCurrent": false,
+      "description": "Processed and monitored insurance claims to minimize outstanding accounts."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Certified Advanced Programming Professional",
+      "field": "Master Data Science",
+      "institution": "GUVI IIT-M",
+      "year": "",
+      "gpa": ""
+    },
+    {
+      "degree": "Bachelor",
+      "field": "Computer Application",
+      "institution": "SRM Arts and Science College",
+      "year": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": "Python, NumPy, Pandas, SQL, MongoDB, Scikit-learn, Ensemble Techniques, EDA, Data Preprocessing, Decision Tree, Matplotlib, Seaborn, Plotly, Streamlit, Tableau, Microsoft Power BI, GridSearchCV, Hyperparameter Tuning, Feature Engineering, EasyOCR",
+    "soft": ""
+  },
+  "projects": [
+    {
+      "name": "Predicting Breast Cancer",
+      "technologies": "Python, Pandas, EDA, Numpy, Seaborn, Ensemble Techniques",
+      "description": "Developed a reliable machine learning model for predicting breast cancer. Processed a dataset with over 500 records, achieving a 92% accuracy using Random Forest Classifier.",
+      "url": ""
+    },
+    {
+      "name": "BizCard: Business Card Data Extraction",
+      "technologies": "EasyOCR, Streamlit GUI, SQL, Data Extraction",
+      "description": "Automated the extraction of business card details using OCR. Achieved 95% OCR accuracy on a dataset of 1,000+ business cards using Streamlit and EasyOCR.",
+      "url": ""
+    },
+    {
+      "name": "PhonePe Pulse Data Visualization",
+      "technologies": "GitHub Cloning, Python, Pandas, MySQL, Streamlit, and Plotly",
+      "description": "Created an interactive dashboard for exploring PhonePe transaction data. Processed and stored 20 billion transaction records, ensuring efficient retrieval.",
+      "url": ""
+    },
+    {
+      "name": "Airbnb Data Analysis",
+      "technologies": "Python scripting, Data Preprocessing, Visualization, EDA, Streamlit, MongoDB",
+      "description": "Enabled exploratory analysis of Airbnb data through a user-friendly application. Analyzed over 10,000 Airbnb listings, identifying pricing trends and seasonal booking patterns.",
+      "url": ""
+    }
+  ],
+  "template": "resumes/resume1.html",
+  "sessionId": "session_1754625364077_9g9y0pvxs"
+}
